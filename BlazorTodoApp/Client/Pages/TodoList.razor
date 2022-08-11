@@ -1,0 +1,16 @@
+﻿<div>
+    <h3>Neue Todo:</h3>
+    <input type="text" @bind="TodoText" />
+    <button @onclick="AddTodo">OK</button>
+</div>
+
+<ul>
+    @foreach (var todo in Todos)
+    {
+        <li>
+            @todo.Text
+
+            <button @onclick="() => RemoveTodo(todo)">X</button>
+        </li>
+    }
+</ul>
